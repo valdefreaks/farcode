@@ -3,19 +3,19 @@
 		<div class="nav-container">
 			<nav>
 				<ul class="flex-navigation">
-					<li>Acerca de mi</li>
-					<li>Mi portafolio</li>
-					<li>Contacto</li>
+					<li><a href="#about-me-section">Acerca de mi</a></li>
+					<li><a href="#portfolio-section">Mi portafolio</a></li>
+					<li><a href="#contact-section">Contacto</a></li>
 				</ul>
 			</nav>
 		</div>
 		<div class="name-container">
 			<h1>Valdemar Farina</h1>
-			<h4>Desarrollador web</h4>
+			<h4>Web Developer</h4>
 			<div class="social-media-container">
-				<i class="fab fa-facebook"></i>
-				<i class="fab fa-youtube"></i>
-				<i class="fab fa-twitter"></i>
+				<a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+				<a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+				<a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
 			</div>
 		</div>
 	</div>
@@ -49,21 +49,60 @@
 			<div class="portfolio-item">
 				<div class="div-opacity">
 					<p>Sistema de Administración de Eventos</p>
-					<p>Windows forms - C#</p>
+					<p>Aplicación Windows forms - C#</p>
 				</div>
 				<img src="../assets/images/descarga.jpeg" alt="">
 				
 			</div>
 			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema Punto de Venta</p>
+					<p>Aplicación Windows forms - C#</p>
+				</div>
 				<img src="../assets/images/descarga.jpeg" alt="">
 			</div>
 			<div class="portfolio-item">
-				<img src="../assets/images/descarga.jpeg" alt="">
-			</div>
-			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Monitoreo CCC</p>
+					<p>Aplicación Web - ASP.NET Core</p>
+				</div>
 				<img src="../assets/images/descarga.jpeg" alt="">
 			</div>
 
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Censo Poblacional</p>
+					<p>Aplicación Web - Angular + Laravel API REST</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div>
 		</div>
+	</div>
+	<div id="contact-section">
+		<div class="form-container">
+			<div>
+				<h1 class="section-title">Contacto</h1>
+				<p>¿Te gustaría obtener información sobre algún proyecto que tienes
+					en mente?
+				</p>
+				<img src="../assets/images/contact_us.png" alt="">
+			</div>
+			<div>
+				<form class="contact-form">
+					<label for="name">Nombre</label>
+					<input type="text" id="name">
+					<label for="email">Correo electrónico</label>
+					<input type="text" id="email">
+					<label for="message">Mensaje</label>
+					<textarea id="message" rows="7"></textarea>
+					<input type="submit" value="Enviar mensaje">
+				</form>
+			</div>
+			
+		</div>
+		
+	</div>
+	<div id="footer-section">
+Todos los derechos reservados
 	</div>
 </div>
