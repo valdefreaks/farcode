@@ -1,14 +1,14 @@
-<div class="first-container">
-	<div id="header-section">
-		<div class="nav-container">
-			<nav>
-				<ul class="flex-navigation">
-					<li><a href="#about-me-section">Acerca de mi</a></li>
-					<li><a href="#portfolio-section">Mi portafolio</a></li>
-					<li><a href="#contact-section">Contacto</a></li>
-				</ul>
-			</nav>
-		</div>
+<div (window:scroll)="doSomethingOnWindowScroll($event.target)" class="first-container">
+	<div [ngClass]="navigationBackground == true ? 'nav-bg' : 'nav-no-bg'" class="nav-container padding">
+		<nav>
+			<ul class="flex-navigation">
+				<li><a href="#about-me-section">Acerca de mi</a></li>
+				<li><a href="#portfolio-section">Mi portafolio</a></li>
+				<li><a href="#contact-section">Contacto</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="header-section" class="padding">
 		<div class="name-container">
 			<h1>Valdemar Farina</h1>
 			<h4>Web Developer</h4>
@@ -18,8 +18,12 @@
 				<a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
 			</div>
 		</div>
+		<div class="hero-opacity">
+
+		</div>
+		<img class="hero-img" src="../assets/images/hero_background_small.jpg" alt="">
 	</div>
-	<div id="about-me-section">
+	<div id="about-me-section" class="padding">
 		<div class="rectangle">
 			<div class="section-title-container">
 				<h1 class="section-title">Acerca de mi</h1>
@@ -37,12 +41,10 @@
 			</div>
 		</div>
 	</div>
-	<div id="portfolio-section">
+	<div id="portfolio-section" class="padding">
 		<div>
 			<h1 class="section-title">Mi portafolio</h1>
-			<p>Mi nombre es Valdemar Farina Sánchez, soy Ingeniero en Tecnologías de la
-				Información, egresado de la Universidad Tecnologíca de la
-				Región Norte de Guerrero.
+			<p>
 			</p>
 		</div>
 		<div class="flex-portfolio-container">
@@ -52,7 +54,7 @@
 					<p>Aplicación Windows forms - C#</p>
 				</div>
 				<img src="../assets/images/descarga.jpeg" alt="">
-				
+
 			</div>
 			<div class="portfolio-item">
 				<div class="div-opacity">
@@ -78,7 +80,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="contact-section">
+	<div id="contact-section" class="padding">
 		<div class="form-container">
 			<div>
 				<h1 class="section-title">Contacto</h1>
@@ -98,11 +100,11 @@
 					<input type="submit" value="Enviar mensaje">
 				</form>
 			</div>
-			
+
 		</div>
-		
+
 	</div>
-	<div id="footer-section">
-Todos los derechos reservados
+	<div id="footer-section" class="padding">
+		Todos los derechos reservados
 	</div>
 </div>
