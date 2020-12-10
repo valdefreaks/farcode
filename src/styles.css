@@ -1,18 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&family=Overlock+SC&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 /***********************************************
 ************* PERSONAL NORMALIZE ***************
 ***********************************************/
 
-ul{
-    margin:0;
+ul {
+    margin: 0;
+    padding: 0;
 }
 
+li {
+    list-style: none;
+}
 
+h1, h4 {
+    margin: 0.4rem 0;
+    font-weight: 400;
+}
+
+/***********************************************
+*********++**** GENERALS STYLES ******+*********
+***********************************************/
+
+:root {
+    /*--primary-dark: #272343;
+    --primary-light: #e3f6f5;
+    --primary: #bae8e8;
+    --background-color: #ffffff;*/
+    /*--primary-dark: #4d3e3e;
+    --primary-light: #ffc38b;
+    --primary: #ff926b;
+    --background-color: #fff3cd;*/
+    /*--primary-dark: #1a1c20;*/
+    /*--primary-light: #ffd5cd;
+    --primary: #f9813a;
+    --background-color: #fcf1f1;*/
+    /*
+    --primary-dark: #222831;
+    --primary-light: #ffd369;
+    --primary: #f9813a;
+    --background-color: #eeeeee;
+
+    --primary: #835858;
+    --primary-dark: #463333;
+    --primary-light: #ebd4d4;
+    --background-color: #fff0f0;
+
+    --primary: #ff9999;
+    --primary-dark: #3e4149;
+    --primary-light: #ffc8c8;
+    --background-color: #eeeeee;
+
+    --primary: #bae8e8;
+    --primary-dark: #272343;
+    --primary-light: #e3f6f5;
+    --background-color: #ffffff;
+
+    --primary: #ff5959;
+    --primary-dark: #1a0841;
+    --primary-light: #4f9da6;
+    --accent: #ffad5a;
+    --background-color: #ffffff;
+    */
+    --primary: #ffad5a;
+    --primary-dark: #283e56;
+    --primary-light: #1989ac;
+    --accent: #970747;
+    --background-color: #fef4e8;
+}
+
+/*
+font-family: 'Andika New Basic', sans-serif;
+font-family: 'Cinzel Decorative', cursive;
+font-family: 'Overlock SC', cursive;
+font-family: 'Sarabun', sans-serif;
+*/
+
+*, html, body {
+    box-sizing: border-box;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    
+}
+
+.section hr {
+    color: var(--primary);
+    margin: 0.5rem 2rem;
+}
 
 /***********************************************
 ***************** PRESENTATION *****************
 ***********************************************/
 
-.first-container{
+#header-section {
     height: 100vh;
-    background-color: black;
+    background-color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    position: fixed;
+    width: 100vw;
+    background-color: var(--primary-dark);
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.flex-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-navigation li {
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+    color: var(--background-color);
+    transition: all 400ms;
+    text-align: center;
+    font-family: 'Overlock SC', cursive;
+}
+
+.flex-navigation li:last-child {
+    margin-right: 0rem;
+}
+
+.flex-navigation li:hover {
+    color: var(--primary);
+}
+
+@media only screen and (min-width: 768px) {
+    .nav-container {
+        padding: 0.5rem 1.5rem;
+    }
+    .flex-navigation {
+        justify-content: flex-end;
+    }
+}
+
+.name-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-container h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    color: var(--primary);
+}
+
+@media only screen and (min-width: 320px) {
+    .name-container h1 {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .name-container h1 {
+        font-size: 3.8rem;
+    }
+}
+
+.name-container h4 {
+    font-family: 'Overlock SC', cursive;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--background-color);
+}
+
+.social-media-container {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.social-media-container * {
+    margin-right: 1rem;
+}
+
+.social-media-container *:last-child {
+    margin-right: 0;
+}
+
+/***********************************************
+*************** ABOUR ME SECTION ***************
+***********************************************/
+
+#about-me-section {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#about-me-section .rectangle {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+}
+
+.section-title-container {}
+
+.rectangle div:first-child {
+    flex-basis: 30%;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--primary);
+    border-right: none;
+}
+
+.rectangle div:last-child {
+    flex-basis: 70%;
+    padding: 1.5rem;
+}
+
+.section-title, .rectangle div .section-title {
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--primary-light);
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.rectangle div p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: justify;
+}
+
+@media only screen and (min-width:768px) {
+    #about-me-section .rectangle {
+        flex-direction: row;
+    }
+    .rectangle div:first-child {
+        flex-basis: 30%;
+        padding: 2.5rem;
+        border-bottom: none;
+        border-right: 1px solid var(--primary);
+    }
+    .rectangle div:last-child {
+        flex-basis: 70%;
+        padding: 2.5rem;
+    }
+    .rectangle div .section-title {
+        text-align: end;
+    }
+    .rectangle div p {
+        font-size: 1.3rem;
+        text-align: start;
+    }
+}
+
+.section-title::before {
+    height: 2px;
+    color: var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#portfolio-section {
+    display: flex;
+    background-color: var(--primary);
+    color: var(--background-color);
+    flex-direction: column;
+    flex-flow: column;
+    align-items: center;
+}
+
+#portfolio-section > div:first-child {
+    flex-basis: 30%;
+    padding: 1.5rem;
+}
+
+#portfolio-section > div:last-child {
+    flex-basis: 70%;
+    padding: 1.5rem;
+}
+
+#portfolio-section div h1 {
+    color: var(--background-color);
+}
+
+#portfolio-section div p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+.flex-portfolio-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.portfolio-item{
+    height: 250px;
+    flex-basis: 100%;
+    max-width: 350px;
+    flex-grow: 1;
+    text-align: center;
+    overflow: hidden;
+    cursor:pointer;
+    position: relative;
+}
+.portfolio-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.7s;
+    cursor:pointer;
+}
+.portfolio-item img:hover{
+    transform: scale(1.1);
+}
+.div-opacity{
+    position: absolute;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.7s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+.div-opacity:hover{
+    
+    opacity: 0.9;
+}
+.div-opacity p{
+    text-align: start;
+    margin: 0;
+}
+.div-opacity p:first-child{
+    
+}
+.div-opacity p:last-child{
+    color: var(--primary-light);
+}
+
+@media only screen and (min-width:992px) {
+    #portfolio-section {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row-reverse;
+    }
+    .portfolio-item{
+        
+        flex-basis: 50%;
+    }
 }
