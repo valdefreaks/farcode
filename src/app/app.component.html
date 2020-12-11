@@ -1,4 +1,4 @@
-<div (window:scroll)="doSomethingOnWindowScroll($event.target)" class="first-container">
+<div (window:scroll)="onResize()" (window:scroll)="doSomethingOnWindowScroll($event.target)" class="first-container">
 	<div [ngClass]="navigationBackground == true ? 'nav-bg' : 'nav-no-bg'" class="nav-container padding">
 		<nav>
 			<ul class="flex-navigation">
@@ -13,9 +13,10 @@
 			<h1>Valdemar Farina</h1>
 			<h4>Web Developer</h4>
 			<div class="social-media-container">
-				<a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
-				<a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
-				<a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+				<a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+				<a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/" target="_blank"><i class="fab fa-linkedin"></i></a>
 			</div>
 		</div>
 		<div class="hero-opacity">
@@ -47,37 +48,12 @@
 			<p>
 			</p>
 		</div>
-		<div class="flex-portfolio-container">
-			<div class="portfolio-item">
-				<div class="div-opacity">
-					<p>Sistema de Administración de Eventos</p>
-					<p>Aplicación Windows forms - C#</p>
-				</div>
-				<img src="../assets/images/descarga.jpeg" alt="">
-
-			</div>
-			<div class="portfolio-item">
-				<div class="div-opacity">
-					<p>Sistema Punto de Venta</p>
-					<p>Aplicación Windows forms - C#</p>
-				</div>
-				<img src="../assets/images/descarga.jpeg" alt="">
-			</div>
-			<div class="portfolio-item">
-				<div class="div-opacity">
-					<p>Sistema de Monitoreo CCC</p>
-					<p>Aplicación Web - ASP.NET Core</p>
-				</div>
-				<img src="../assets/images/descarga.jpeg" alt="">
-			</div>
-
-			<div class="portfolio-item">
-				<div class="div-opacity">
-					<p>Sistema de Censo Poblacional</p>
-					<p>Aplicación Web - Angular + Laravel API REST</p>
-				</div>
-				<img src="../assets/images/descarga.jpeg" alt="">
-			</div>
+		<div #carouselContainer class="flex-portfolio-container">
+			<carousel class="carousel" [images]="images" [height]="carouselHeight" 
+			[width]="carouselWidth" [borderRadius]="8"
+			[cellWidth]="cellWidth"
+			[dots]="true" [transitionDuration]="700" [objectFit]="'cover'" [cellsToScroll]="1">
+			</carousel>
 		</div>
 	</div>
 	<div id="contact-section" class="padding">
@@ -108,3 +84,34 @@
 		Todos los derechos reservados
 	</div>
 </div>
+
+<!-- <div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Administración de Eventos</p>
+					<p>Aplicación Windows forms - C#</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+
+			</div>
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema Punto de Venta</p>
+					<p>Aplicación Windows forms - C#</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div>
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Monitoreo CCC</p>
+					<p>Aplicación Web - ASP.NET Core</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div>
+
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Censo Poblacional</p>
+					<p>Aplicación Web - Angular + Laravel API REST</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div> -->
