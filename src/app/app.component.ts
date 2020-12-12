@@ -8,13 +8,14 @@ import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angu
 export class AppComponent {
 
 	@ViewChild('carouselContainer', { static: false }) carouselContainer: ElementRef;
+
 	title = 'farcode';
 	navigationBackground: boolean;
 	images = [
-		{ path: '../assets/images/descarga.jpeg' },
-		{ path: '../assets/images/descarga.jpeg' },
-		{ path: '../assets/images/descarga.jpeg' },
-		{ path: '../assets/images/descarga.jpeg' },
+		{ path: '../assets/images/census_project.png' },
+		{ path: '../assets/images/vidanta_project.png' },
+		{ path: '../assets/images/lunadepapel_project.png' },
+		{ path: '../assets/images/banquetes_project.png' },
 	]
 	carouselWidth: number;
 	carouselHeight: number;
@@ -23,10 +24,10 @@ export class AppComponent {
 	getScreenSize($event?) {
 		let carouselContainer = this.carouselContainer.nativeElement;
 		this.carouselWidth = carouselContainer.offsetWidth;
-		if(this.carouselWidth < 1067){
+		if(this.carouselWidth < 875){
 			this.carouselHeight = (this.carouselWidth / 16) * 9;
 		} else{
-			this.carouselHeight = 600;
+			this.carouselHeight = 540;
 		}
 		
 		this.cellWidth = (this.carouselHeight / 9) * 16;

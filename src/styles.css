@@ -84,6 +84,7 @@ input:focus, textarea:focus {
     --primary: #fbd46d;
     --accent: #970747;
     --background-color: #eeeeee;
+    --primary-light: #00bcd4;
 }
 
 /*
@@ -98,6 +99,9 @@ font-family: 'Sarabun', sans-serif;
     font-family: 'Sarabun', sans-serif;
     font-weight: 400;
     font-size: 1rem;
+}
+html{
+    scroll-behavior: smooth;
 }
 
 .padding {
@@ -313,7 +317,7 @@ font-family: 'Sarabun', sans-serif;
 .rectangle div:first-child {
     flex-basis: 30%;
     padding: 1.5rem;
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
     border-right: none;
 }
 
@@ -328,6 +332,7 @@ font-family: 'Sarabun', sans-serif;
     color: var(--primary-light);
     font-size: 2.5rem;
     margin: 0;
+    font-weight: 600;
 }
 
 .rectangle div p {
@@ -345,7 +350,7 @@ font-family: 'Sarabun', sans-serif;
         flex-basis: 30%;
         padding: 2.5rem;
         border-bottom: none;
-        border-right: 1px solid var(--primary);
+        border-right: 2px solid var(--primary);
     }
     .rectangle div:last-child {
         flex-basis: 70%;
@@ -387,12 +392,9 @@ font-family: 'Sarabun', sans-serif;
     flex-grow: 0;
 }
 
-
-
 #portfolio-section>div:first-child {
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
     flex-basis: 100%;
-    padding: 1.5rem 0 0 0;
     margin-bottom: 1rem;
     flex-grow: 1;
 }
@@ -405,11 +407,6 @@ font-family: 'Sarabun', sans-serif;
 
 #portfolio-section div h1 {
     text-align: center;
-}
-
-#portfolio-section div p {
-    font-size: 0.9rem;
-    line-height: 1.5;
 }
 
 .flex-portfolio-container {
