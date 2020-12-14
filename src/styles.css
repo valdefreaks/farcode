@@ -100,9 +100,10 @@ font-family: 'Pacifico', cursive;
     box-sizing: border-box;
     font-family: 'Sarabun', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 16px;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -118,6 +119,21 @@ html{
     }
 }
 
+.btn-primary {
+    border-radius: 3px;
+    color: var(--primary-dark);
+    background-color: var(--primary);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+}
+
 /***********************************************
 ***************** NAVIGATION *****************
 ***********************************************/
@@ -127,7 +143,6 @@ html{
     flex-shrink: 0;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
-    
     position: sticky;
     width: 100%;
     top: 0;
@@ -178,9 +193,7 @@ html{
 }
 
 @media only screen and (min-width: 768px) {
-    .nav-container {
-        
-    }
+    .nav-container {}
     .flex-navigation {
         justify-content: flex-end;
     }
@@ -251,7 +264,6 @@ html{
 }
 
 .name-container h1 {
-    font-family: 'Cinzel Decorative', cursive;
     font-family: 'Pacifico', cursive;
     text-align: center;
     font-size: 3rem;
@@ -259,6 +271,17 @@ html{
     letter-spacing: 0.2rem;
     word-spacing: 0.5rem;
     color: var(--primary);
+    animation-name: title;
+    animation-duration: 1s;
+}
+
+@keyframes title {
+    from {
+        font-size: 3rem;
+    }
+    to {
+        font-size:4.3rem;
+    }
 }
 
 @media only screen and (min-width: 320px) {
@@ -418,10 +441,63 @@ html{
     flex-direction: row;
     justify-content: center;
 }
-.carousel{
+
+.carousel {
     flex-basis: 100%;
 }
 
+.carousel .carousel-cell {
+    position: relative;
+    border-radius: 10px;
+}
+
+.carousel-info-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px 20px 10px 10px;
+}
+
+.carousel-info p:first-child {
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+}
+
+.carousel-info p:last-child {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--primary);
+}
+
+.carousel-details button {
+    font-size: 0.8rem;
+}
+
+@media only screen and (min-width:768px) {
+    .carousel-info p:first-child {
+        font-size: 1.5rem;
+    }
+    .carousel-info p:last-child {
+        font-size: 1.3rem;
+    }
+    .carousel-info-container {
+        padding: 1.5rem;
+        align-items: start;
+    }
+    .carousel-details button {
+        font-size: 1rem;
+    }
+}
+
+/*
 .portfolio-item {
     min-height: 150px;
     max-height: 300px;
@@ -473,6 +549,7 @@ html{
 .div-opacity p:last-child {
     color: var(--primary-light);
 }
+*/
 
 @media only screen and (min-width:992px) {
     /*#portfolio-section {
@@ -560,19 +637,7 @@ html{
 }
 
 .contact-form input[type="submit"] {
-    background-color: var(--primary);
-    padding: 7px 12px;
-    color: var(--primary-dark);
-    border-radius: 3px;
-    border: none;
-    box-shadow: 0px 0px 5px rgba(40, 62, 86, 0.5);
     margin-left: auto;
-    cursor: pointer;
-    transition: all 0.5s;
-}
-
-.contact-form input[type="submit"]:hover {
-    background-color: var(--primary);
 }
 
 /***********************************************

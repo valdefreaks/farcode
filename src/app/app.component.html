@@ -13,7 +13,8 @@
 			<h1>Valdemar Farina</h1>
 			<h4>Web Developer</h4>
 			<div class="social-media-container">
-				<a href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/" target="_blank"><i
+						class="fab fa-linkedin"></i></a>
 				<a href="https://github.com/valdefreaks" target="_blank"><i class="fab fa-github"></i></a>
 				<a href="https://www.facebook.com/Valdemar.Farina/" target="_blank"><i class="fab fa-facebook"></i></a>
 				<a href="https://www.youtube.com/c/valdefreaks" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -47,10 +48,99 @@
 			<h1 class="section-title">Mi portafolio</h1>
 		</div>
 		<div #carouselContainer class="flex-portfolio-container">
-			<carousel class="carousel" [images]="images" [height]="carouselHeight" 
-			[width]="carouselWidth" [borderRadius]="8"
-			[cellWidth]="cellWidth"
-			[dots]="true" [transitionDuration]="700" [objectFit]="'cover'" [cellsToScroll]="1">
+			<carousel class="carousel" [height]="carouselHeight" [width]="carouselWidth" [borderRadius]="8"
+				[cellWidth]="cellWidth" [dots]="true" [transitionDuration]="700" [objectFit]="'cover'" [margin]="30"
+				[cellsToScroll]="1">
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de censo poblacional</p>
+							<p>Aplicación Web: Angular + Laravel API REST + MySQL</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/census_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de monitoreo Call Center</p>
+							<p>Aplicación Web: ASP.NET Core + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/vidanta_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de pedidos online</p>
+							<p>Sitio Web: ASP.NET Core + Bootstrap + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/lunadepapel_users_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de administración de pedidos</p>
+							<p>Aplicación Web: ASP.NET Core + Bootstrap + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/lunadepapel_admin_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>App para supervisión remota</p>
+							<p>Aplicación movil (Android): Java + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+					</div>
+					<img src="../assets/images/lunadepapel_supervisor_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Punto de venta multisucursal</p>
+							<p>Aplicación Windows forms: C# + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/lunadepapel_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de Administración de Eventos</p>
+							<p>Aplicación Windows forms: C# + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/banquetes_project.png">
+				</div>
 			</carousel>
 		</div>
 	</div>
@@ -71,7 +161,7 @@
 					<input type="text" id="email">
 					<label for="message">Mensaje</label>
 					<textarea id="message" rows="7"></textarea>
-					<input type="submit" value="Enviar mensaje">
+					<input class="btn-primary" type="submit" value="Enviar mensaje">
 				</form>
 			</div>
 
