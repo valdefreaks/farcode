@@ -1,5 +1,5 @@
-<div (window:scroll)="onResize()" (window:scroll)="doSomethingOnWindowScroll($event.target)" class="first-container">
-	<div [ngClass]="navigationBackground == true ? 'nav-bg' : 'nav-no-bg'" class="nav-container padding">
+<div #firstContainer (window:scroll)="onResize()" (window:scroll)="doSomethingOnWindowScroll($event.target)" class="first-container">
+	<div @fadeRightNav [ngClass]="navigationBackground == true ? 'nav-bg' : 'nav-no-bg'" class="nav-container padding">
 		<nav>
 			<ul class="flex-navigation">
 				<li><a href="#about-me-section">Acerca de mi</a></li>
@@ -9,15 +9,15 @@
 		</nav>
 	</div>
 	<div id="header-section" class="padding">
-		<div class="name-container">
-			<h1>Valdemar Farina</h1>
-			<h4>Web Developer</h4>
+		<div  class="name-container">
+			<h1 @fadeTop>Valdemar Farina</h1>
+			<h4 @fade>Web Developer</h4>
 			<div class="social-media-container">
-				<a href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/" target="_blank"><i
+				<a @fadeLeft2 href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/" target="_blank"><i
 						class="fab fa-linkedin"></i></a>
-				<a href="https://github.com/valdefreaks" target="_blank"><i class="fab fa-github"></i></a>
-				<a href="https://www.facebook.com/Valdemar.Farina/" target="_blank"><i class="fab fa-facebook"></i></a>
-				<a href="https://www.youtube.com/c/valdefreaks" target="_blank"><i class="fab fa-youtube"></i></a>
+				<a @fadeLeft href="https://github.com/valdefreaks" target="_blank"><i class="fab fa-github"></i></a>
+				<a @fadeRight href="https://www.facebook.com/Valdemar.Farina/" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a @fadeRight2 href="https://www.youtube.com/c/valdefreaks" target="_blank"><i class="fab fa-youtube"></i></a>
 			</div>
 		</div>
 		<div class="hero-opacity">
@@ -26,17 +26,34 @@
 		<img class="hero-img" src="../assets/images/hero_background_small.jpg" alt="">
 	</div>
 	<div id="about-me-section" class="padding">
-		<div class="rectangle">
+		<div *ngIf="mobileDevice == true" class="rectangle">
 			<div class="section-title-container">
-				<h1 class="section-title">Acerca de mi</h1>
+				<h1 [@showHideTitleSection]="animateAboutMe ? 'mobileShow' : 'mobileHide'" class="section-title">Acerca de mi</h1>
 			</div>
 			<div>
-				<p>Mi nombre es Valdemar Farina Sánchez, soy Ingeniero en Tecnologías de la
+				<p  [@fade]="animateAboutMe ? 'show' : 'hide'">Mi nombre es Valdemar Farina Sánchez, soy Ingeniero en Tecnologías de la
+					Información, egresado de la Universidad Tecnologíca de la
+					Región Norte de Guerrero.
+				</p>
+				
+				<br>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">Soy una persona responsable y comprometida con los proyectos que emprendo. Durante 3 años me he
+					desempeñado de manera independiente desarrollando proyectos informáticos que satisfagan las
+					necesidades de mis clientes, entregando productos que superen, por mucho, las expectativas de éstos.
+				</p>
+			</div>
+		</div>
+		<div *ngIf="mobileDevice == false" class="rectangle">
+			<div class="section-title-container">
+				<h1 [@showHideTitleSection]="animateAboutMe ? 'show' : 'hide'" class="section-title">Acerca de mi</h1>
+			</div>
+			<div>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">Mi nombre es Valdemar Farina Sánchez, soy Ingeniero en Tecnologías de la
 					Información, egresado de la Universidad Tecnologíca de la
 					Región Norte de Guerrero.
 				</p>
 				<br>
-				<p>Soy una persona responsable y comprometida con los proyectos que emprendo. Durante 3 años me he
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">Soy una persona responsable y comprometida con los proyectos que emprendo. Durante 3 años me he
 					desempeñado de manera independiente desarrollando proyectos informáticos que satisfagan las
 					necesidades de mis clientes, entregando productos que superen, por mucho, las expectativas de éstos.
 				</p>
@@ -45,11 +62,11 @@
 	</div>
 	<div id="portfolio-section" class="padding">
 		<div class="section-title-container">
-			<h1 class="section-title">Mi portafolio</h1>
+			<h1 [@showHideTitleSection]="animatePortfolio ? 'mobileShow' : 'mobileHide'" class="section-title">Mi portafolio</h1>
 		</div>
-		<div #carouselContainer class="flex-portfolio-container">
+		<div [@fade]="animatePortfolio ? 'show' : 'hide'" #carouselContainer class="flex-portfolio-container">
 			<carousel class="carousel" [height]="carouselHeight" [width]="carouselWidth" [borderRadius]="8"
-				[cellWidth]="cellWidth" [dots]="true" [transitionDuration]="700" [objectFit]="'cover'" [margin]="30"
+				[cellWidth]="cellWidth" [transitionDuration]="700" [objectFit]="'cover'" [margin]="30"
 				[cellsToScroll]="1">
 				<div class="carousel-cell">
 					<div class="carousel-info-container">

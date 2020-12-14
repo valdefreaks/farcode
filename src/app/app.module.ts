@@ -11,7 +11,8 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 	],
 	imports: [
 		BrowserModule,
-		IvyCarouselModule
+		IvyCarouselModule,
+		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

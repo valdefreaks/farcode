@@ -193,7 +193,6 @@ html {
 }
 
 @media only screen and (min-width: 768px) {
-    .nav-container {}
     .flex-navigation {
         justify-content: flex-end;
     }
@@ -214,7 +213,7 @@ html {
 }
 
 #header-section {
-    height: 70vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -271,17 +270,6 @@ html {
     letter-spacing: 0.2rem;
     word-spacing: 0.5rem;
     color: var(--primary);
-    animation-name: title;
-    animation-duration: 1s;
-}
-
-@keyframes title {
-    from {
-        font-size: 3rem;
-    }
-    to {
-        font-size:4.3rem;
-    }
 }
 
 @media only screen and (min-width: 320px) {
@@ -310,13 +298,13 @@ html {
 }
 
 .social-media-container a {
-    margin-right: 1rem;
+    margin: 0 0.5rem;
     font-size: 1.2rem;
     color: var(--background-color);
 }
 
 .social-media-container *:last-child {
-    margin-right: 0;
+    
 }
 
 /***********************************************
