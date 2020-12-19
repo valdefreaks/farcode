@@ -9,37 +9,37 @@ export const animations = [
         state('void', style({opacity: 0,})),
         state('hide', style({ opacity: 0 })),
         state('show', style({ opacity: 1 })),
-        transition(':enter', animate('500ms 1600ms')),
-        transition('hide => show', [animate('700ms 1500ms')]),
-        transition('show => hide', [animate('700ms 500ms')])
+        transition(':enter', animate('500ms 800ms')),
+        transition('hide => show', [animate('500ms 800ms')]),
+        /*transition('show => hide', [animate('400ms 500ms')])*/
     ]),
     trigger('fadeRight', [
         state('void', style({ opacity: 0, marginLeft: '2rem' })),
-        transition(':enter', [animate('700ms 2300ms')])
+        transition(':enter', [animate('600ms 2300ms')])
     ]),
     trigger('fadeLeft', [
         state('void', style({ opacity: 0, marginRight: '2rem' })),
-        transition(':enter', [animate('700ms 2300ms')])
+        transition(':enter', [animate('600ms 2300ms')])
     ]),
     trigger('fadeRight2', [
         state('void', style({ opacity: 0, marginLeft: '2rem' })),
-        transition(':enter', [animate('700ms 3200ms')])
+        transition(':enter', [animate('600ms 3100ms')])
     ]),
     trigger('fadeLeft2', [
         state('void', style({ opacity: 0, marginRight: '2rem' })),
-        transition(':enter', [animate('700ms 3200ms')])
+        transition(':enter', [animate('600ms 3100ms')])
     ]),
     trigger('fadeRightNav', [
         state('void', style({ opacity: 0, paddingRight: '0' })),
-        transition(':enter', [animate('700ms 4100ms')])
+        transition(':enter', [animate('500ms 3900ms')])
     ]),
     trigger('showHideTitleSection', [
         state('mobileHide', style({ opacity: 0, marginTop: '-2rem' })),
         state('mobileShow', style({ opacity: 1, marginBottom: '0'})),
         state('hide', style({ opacity: 0, marginRight: '2rem'})),
         state('show', style({ opacity: 1, marginRight: '0' })),
-        transition('hide <=> show', [animate('700ms 500ms')]),
-        transition('mobileHide <=> mobileShow', [animate('700ms 500ms')])
+        transition('hide => show', [animate('400ms 300ms')]),
+        transition('mobileHide => mobileShow', [animate('400ms 300ms')])
     ]),
     
 ]

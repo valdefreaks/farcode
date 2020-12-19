@@ -76,17 +76,17 @@ export class AppComponent {
 		if (scrollOffset > 265 && scrollOffset < 1375) {
 			if (!this.animateAboutMe)
 				this.animateAboutMe = true;
-		} else {
+		} /*else {
 			if (this.animateAboutMe)
 				this.animateAboutMe = false;
-		}
+		}*/
 		if (scrollOffset > 1007 && scrollOffset < 1855) {
 			if (!this.animatePortfolio)
 				this.animatePortfolio = true;
-		} else {
+		} /*else {
 			if (this.animatePortfolio)
 				this.animatePortfolio = false;
-		}
+		}*/
 		console.log("window scroll: ", scrollOffset);
 		//this.getScreenSize();
 
