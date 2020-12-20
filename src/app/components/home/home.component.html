@@ -1,0 +1,260 @@
+<div #firstContainer (window:scroll)="onResize()" (window:scroll)="doSomethingOnWindowScroll($event.target)"
+	class="first-container">
+	<div @fadeRightNav [ngClass]="navigationBackground == true ? 'nav-bg' : 'nav-no-bg'" class="nav-container padding">
+		<nav>
+			<ul class="flex-navigation">
+				<li><a >Acerca de mi</a></li>
+				<li><a href="home#portfolio-section">Mi portafolio</a></li>
+				<li><a href="#contact-section">Contacto</a></li>
+			</ul>
+		</nav>
+	</div>
+	<section id="header-section" class="padding">
+		<div class="name-container">
+			<h1 @fadeTop>Valdemar Farina</h1>
+			<h4 @fadeSlow>Developer</h4>
+			<div class="social-media-container">
+				<a @fadeLeft2 href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/"
+					target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a @fadeLeft href="https://github.com/valdefreaks" target="_blank"><i class="fab fa-github"></i></a>
+				<a @fadeRight href="https://www.facebook.com/Valdemar.Farina/" target="_blank"><i
+						class="fab fa-facebook"></i></a>
+				<a @fadeRight2 href="https://www.youtube.com/c/valdefreaks" target="_blank"><i
+						class="fab fa-youtube"></i></a>
+			</div>
+		</div>
+		<div class="hero-opacity">
+
+		</div>
+		<img class="hero-img" src="../assets/images/hero_background_small.jpg" alt="">
+	</section>
+	<section id="about-me-section" class="padding">
+		<div *ngIf="mobileDevice == true" class="rectangle">
+			<div class="section-title-container">
+				<h1 [@showHideTitleSection]="animateAboutMe ? 'mobileShow' : 'mobileHide'" class="section-title">¡Hola
+					nuevo amigo!</h1>
+			</div>
+			<div>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">
+					Mi nombre es <span>Valdemar Farina</span>
+					y me da gusto que estes aquí.
+				</p>
+				<br>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">Te cuento un poco sobre mi: <br>
+					Siempre he sido un apasionado de la tecnología, por al motivo, estudié la
+					Ingeniería en Tecnologías de la Información. Desde hace 3 años, me he
+					desempeñado de manera independiente desarrollando proyectos informáticos que satisfagan las
+					necesidades de mis clientes, entregando productos que superen, por mucho, las expectativas de éstos.
+				</p>
+				<br>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">
+					A continuación podrás observar algunos de los proyectos que he desarrollado,
+					siéntete en confianza de ponerte en contacto conmigo si así lo deseas.
+				</p>
+			</div>
+		</div>
+		<div *ngIf="mobileDevice == false" class="rectangle">
+			<div class="section-title-container">
+				<h1 [@showHideTitleSection]="animateAboutMe ? 'mobileShow' : 'mobileHide'" class="section-title">¡Hola
+					nuevo amigo!</h1>
+			</div>
+			<div>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">
+					Mi nombre es <span>Valdemar Farina</span>
+					y me da gusto que estes aquí.
+				</p>
+				<br>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">Te cuento un poco sobre mi: <br>
+					Siempre he sido un apasionado de la tecnología, por al motivo, estudié la
+					Ingeniería en Tecnologías de la Información. Desde hace 3 años, me he
+					desempeñado de manera independiente desarrollando proyectos informáticos que satisfagan las
+					necesidades de mis clientes, entregando productos que superen, por mucho, las expectativas de éstos.
+				</p>
+				<br>
+				<p [@fade]="animateAboutMe ? 'show' : 'hide'">
+					A continuación podrás observar algunos de los proyectos que he desarrollado,
+					siéntete en confianza de ponerte en contacto conmigo si así lo deseas.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section id="portfolio-section" class="padding">
+		<div class="section-title-container">
+			<h1 [@showHideTitleSection]="animatePortfolio ? 'mobileShow' : 'mobileHide'" class="section-title">¡Mi
+				próximo proyecto podría ser el tuyo!</h1>
+		</div>
+		<div [@fade]="animatePortfolio ? 'show' : 'hide'" #carouselContainer class="flex-portfolio-container">
+			<carousel class="carousel" [height]="carouselHeight" [width]="carouselWidth" [borderRadius]="8"
+				[cellWidth]="cellWidth" [transitionDuration]="700" [objectFit]="'cover'" [margin]="30"
+				[cellsToScroll]="1">
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de censo poblacional</p>
+							<p>Aplicación Web: Angular + Laravel API REST + MySQL</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/census_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de monitoreo Call Center</p>
+							<p>Aplicación Web: ASP.NET Core + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/vidanta_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de pedidos online</p>
+							<p>Sitio Web: ASP.NET Core + Bootstrap + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/lunadepapel_users_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de administración de pedidos</p>
+							<p>Aplicación Web: ASP.NET Core + Bootstrap + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/lunadepapel_admin_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>App para supervisión remota</p>
+							<p>Aplicación movil (Android): Java + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+					</div>
+					<img src="../assets/images/lunadepapel_supervisor_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Punto de venta multisucursal</p>
+							<p>Aplicación Windows forms: C# + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/lunadepapel_project.png">
+				</div>
+				<div class="carousel-cell">
+					<div class="carousel-info-container">
+						<div class="carousel-info">
+							<p>Sistema de Administración de Eventos</p>
+							<p>Aplicación Windows forms: C# + Sql Server</p>
+						</div>
+						<div class="carousel-details">
+							<button class="btn-primary">Detalles</button>
+						</div>
+
+					</div>
+					<img src="../assets/images/banquetes_project.png">
+				</div>
+			</carousel>
+		</div>
+	</section>
+	<section id="contact-section" class="padding">
+		<div class="section-title-container">
+			<h1 [@showHideTitleSection]="animatePortfolio ? 'mobileShow' : 'mobileHide'" class="section-title">
+				¿Tienes algo en mente?</h1>
+		</div>
+		<div class="form-container">
+			<div>
+				<p>¿Te gustaría obtener información sobre algún proyecto que tienes
+					en mente?
+				</p>
+				<img src="../assets/images/contact_us.png" alt="">
+			</div>
+			<div>
+				<form class="contact-form">
+					<label for="name">Nombre</label>
+					<input type="text" id="name">
+					<label for="email">Correo electrónico</label>
+					<input type="text" id="email">
+					<label for="message">Mensaje</label>
+					<textarea id="message" rows="7"></textarea>
+					<input class="btn-primary" type="submit" value="Enviar mensaje">
+				</form>
+			</div>
+
+		</div>
+
+	</section>
+	<section id="footer-section" class="padding">
+		<div class="footer-content">
+			<h5>Contacto</h5>
+			<p><i class="footer-icon fas fa-envelope"></i>valdefreaks92@gmail.com</p>
+
+
+		</div>
+		<div class="footer-content">
+			<h5>También puedes ver</h5>
+			<a><i class="footer-icon fas fa-lock"></i>Aviso de privacidad</a>
+		</div>
+		<div class="footer-content copyright">
+			<p>&copy; 2020 - Valdemar Farina Sánchez</p>
+		</div>
+		<div class="footer-opacity">
+
+		</div>
+		<img class="footer-img" src="../assets/images/hero_background_small.jpg" alt="">
+	</section>
+</div>
+
+<!-- <div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Administración de Eventos</p>
+					<p>Aplicación Windows forms - C#</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+
+			</div>
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema Punto de Venta</p>
+					<p>Aplicación Windows forms - C#</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div>
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Monitoreo CCC</p>
+					<p>Aplicación Web - ASP.NET Core</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div>
+
+			<div class="portfolio-item">
+				<div class="div-opacity">
+					<p>Sistema de Censo Poblacional</p>
+					<p>Aplicación Web - Angular + Laravel API REST</p>
+				</div>
+				<img src="../assets/images/descarga.jpeg" alt="">
+			</div> -->
