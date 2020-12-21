@@ -37,10 +37,10 @@ export class HomeComponent implements OnInit {
 		this.getScreenSize();
 	}
 	ngOnInit() {
+		this.navigationBackground = false;
 		setTimeout(()=> {
 			this.animationsMediaQuery();
 		}, 500);
-
 	}
 	getScreenSize($event?) {
 		this.adjustCarousel();

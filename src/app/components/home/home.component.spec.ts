@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
+  let navigationBackground: boolean;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(waitForAsync(() => {
@@ -23,4 +24,7 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('initial without navigation background', ()=>{
+    expect(navigationBackground).toBeFalsy();
+  })
 });
