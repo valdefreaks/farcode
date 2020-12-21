@@ -1,11 +1,27 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { HomeComponent } from './components/home/home.component';
+import { ErrorComponent } from './components/error/error.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        IvyCarouselModule,
+        BrowserAnimationsModule
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        PrivacyComponent,
+        HomeComponent,
+        ErrorComponent,
+        FooterComponent
       ],
     }).compileComponents();
   }));
@@ -14,18 +30,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'farcode'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('farcode');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('farcode app is running!');
   });
 });

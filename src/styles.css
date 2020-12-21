@@ -685,6 +685,9 @@ html {
 .footer-content .footer-icon {
     margin-right: 10px;
 }
+.footer-content a{
+    color: var(--background-color);
+}
 
 .footer-opacity {
     position: absolute;

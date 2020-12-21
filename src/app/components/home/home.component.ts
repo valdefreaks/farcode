@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { animations } from '../../animations/animations';
+import { animations, fadeRightNav } from '../../animations/animations';
 
 
 @Component({
@@ -7,14 +7,13 @@ import { animations } from '../../animations/animations';
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.css'],
 	animations: [
-		animations
+		animations, fadeRightNav
 	]
 })
 export class HomeComponent implements OnInit {
 	@ViewChild('carouselContainer', { static: false }) carouselContainer: ElementRef;
 	@ViewChild('firstContainer', { static: false }) firstContainer: ElementRef;
 	@HostListener('window:resize', ['$event'])
-	title = 'farcode';
 	navigationBackground: boolean;
 	/*images = [
 		{ path: '../assets/images/census_project.png' },

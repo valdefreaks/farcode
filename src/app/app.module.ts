@@ -8,17 +8,19 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import {routing, appRoutingProviders} from './app.routing';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
 	declarations: [
 		AppComponent,
 		PrivacyComponent,
 		HomeComponent,
-		ErrorComponent
+		ErrorComponent,
+		FooterComponent
 	],
 	imports: [
 		BrowserModule,
 		IvyCarouselModule,
-		BrowserAnimationsModule, 
+		BrowserAnimationsModule,
 		routing
 	],
 	providers: [appRoutingProviders],

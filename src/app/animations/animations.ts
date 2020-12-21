@@ -1,5 +1,9 @@
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
+export let fadeRightNav = trigger('fadeRightNav', [
+    state('void', style({ opacity: 0, paddingRight: '0' })),
+    transition(':enter', [animate('500ms 4300ms')])
+]);
 export const animations = [
     trigger('fadeTop', [
         state('void', style({ marginTop: '-3.5rem', opacity: 0 })),
@@ -36,10 +40,6 @@ export const animations = [
     trigger('fadeLeft2', [
         state('void', style({ opacity: 0, marginRight: '2rem' })),
         transition(':enter', [animate('600ms 3500ms')])
-    ]),
-    trigger('fadeRightNav', [
-        state('void', style({ opacity: 0, paddingRight: '0' })),
-        transition(':enter', [animate('500ms 4300ms')])
     ]),
     trigger('showHideTitleSection', [
         state('mobileHide', style({ opacity: 0, marginTop: '-2rem' })),
