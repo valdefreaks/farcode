@@ -9,22 +9,24 @@ import { ErrorComponent } from './components/error/error.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        IvyCarouselModule,
-        BrowserAnimationsModule
-      ],
-      declarations: [
-        AppComponent,
-        PrivacyComponent,
-        HomeComponent,
-        ErrorComponent,
-        FooterComponent
-      ],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          RouterTestingModule,
+          IvyCarouselModule,
+          BrowserAnimationsModule,
+        ],
+        declarations: [
+          AppComponent,
+          PrivacyComponent,
+          HomeComponent,
+          ErrorComponent,
+          FooterComponent,
+        ],
+      }).compileComponents();
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

@@ -7,13 +7,14 @@ describe('HomeComponent', () => {
   let navigationBackground: boolean;
   let fixture: ComponentFixture<HomeComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HomeComponent ],
-      imports:[BrowserAnimationsModule]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [HomeComponent],
+        imports: [BrowserAnimationsModule],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
@@ -24,7 +25,7 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('initial without navigation background', ()=>{
+  it('initial without navigation background', () => {
     expect(navigationBackground).toBeFalsy();
-  })
+  });
 });
