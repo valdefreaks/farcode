@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { routing, appRoutingProviders } from './app.routing';
+import { AppRoutingModule } from './app.routing';
 import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
@@ -17,8 +17,12 @@ import { FooterComponent } from './components/footer/footer.component';
     ErrorComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, IvyCarouselModule, BrowserAnimationsModule, routing],
-  providers: [appRoutingProviders],
+  imports: [
+    BrowserModule,
+    IvyCarouselModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

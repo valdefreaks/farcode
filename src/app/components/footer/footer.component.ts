@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ROUTE_TO_PRIVACY } from '../../utils/common-contanst';
 
 @Component({
   selector: 'app-footer',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  navigate() {
+    const nav = this.router.navigate([ROUTE_TO_PRIVACY]);
+  }
 }

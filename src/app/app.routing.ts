@@ -1,18 +1,28 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
-import { ErrorComponent } from './components/error/error.component';
+import {
+  ROUTE_TO_HOME,
+  ROUTE_TO_NOT_FOUND,
+  ROUTE_TO_PRIVACY,
+} from './utils/common-contanst';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'privacy', component: PrivacyComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: ErrorComponent },
+  { path: '', redirectTo: ROUTE_TO_HOME, pathMatch: 'full' },
+  { path: ROUTE_TO_HOME, component: HomeComponent },
+  { path: ROUTE_TO_PRIVACY, component: PrivacyComponent },
+  { path: ROUTE_TO_NOT_FOUND, redirectTo: ROUTE_TO_HOME },
 ];
 
-export const appRoutingProviders: any[] = [];
-export const routing: ModuleWithProviders<any> = RouterModule.forRoot(
-  appRoutes,
-  { useHash: true, relativeLinkResolution: 'legacy' }
-);
+@NgModule({
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(appRoutes, {
+      useHash: false,
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

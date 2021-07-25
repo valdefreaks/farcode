@@ -1,0 +1,87 @@
+/***********************************************
+***************** NAVIGATION *****************
+***********************************************/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-container {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  transition: all 0.2s;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-bg {
+  background-color: var(--primary-dark);
+}
+
+.flex-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+}
+
+.flex-navigation li {
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+  color: var(--background-color);
+  transition: all 400ms;
+  text-align: center;
+  font-family: 'Overlock SC', cursive;
+}
+
+.flex-navigation li a {
+  color: var(--background-color);
+  transition: all 400ms;
+}
+
+.flex-navigation li a svg {
+  color: var(--background-color);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.flex-navigation li:hover,
+.flex-navigation li a:hover {
+  color: var(--primary);
+}
+
+.section-title {
+  border-bottom: 2px solid var(--primary);
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: var(--primary-dark);
+  font-size: 2rem;
+  transition: 0.5s all ease-in-out;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+app-footer {
+  width: 100%;
+}
+
+@media only screen and (min-width: 480px) {
+  .section-title-container h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-navigation {
+    justify-content: flex-start;
+  }
+}

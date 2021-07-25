@@ -1,4 +1,8 @@
 import {
+  AfterContentChecked,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   HostListener,
@@ -7,47 +11,60 @@ import {
   ViewChild,
 } from '@angular/core';
 import { animations, fadeRightNav } from '../../animations/animations';
+import { RESPONSIVE_MD, RESPONSIVE_SM } from '../../utils/common-contanst';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [animations, fadeRightNav],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent
+  implements OnInit, AfterContentChecked, AfterViewInit
+{
   @ViewChild('carouselContainer', { static: false })
   carouselContainer: ElementRef;
   @ViewChild('firstContainer', { static: false }) firstContainer: ElementRef;
-  @HostListener('window:resize', ['$event'])
+  @ViewChild('headerSection', { static: false }) headerSection: ElementRef;
   navigationBackground: boolean;
-  /*images = [
-		{ path: '../assets/images/census_project.png' },
-		{ path: '../assets/images/vidanta_project.png' },
-		{ path: '../assets/images/lunadepapel_project.png' },
-		{ path: '../assets/images/banquetes_project.png' },
-	]*/
   carouselWidth: number;
   carouselHeight: number;
   cellWidth: number;
-
   animateAboutMe: boolean;
   animatePortfolio: boolean;
   mobileDevice: boolean;
+  heroImg: string = 'assets/images/hero_background_small.jpg';
 
-  constructor(private _renderer: Renderer2) {}
+  constructor(private _renderer: Renderer2, private cdr: ChangeDetectorRef) {}
+  @HostListener('window:resize')
   onResize() {
-    this.getScreenSize();
+    this.adjustCarousel();
+    this.animationsMediaQuery();
+    this.changeHeroImage(window.innerWidth);
+  }
+  @HostListener('window:scroll', ['$event'])
+  doSomethingOnWindowScroll($event) {
+    this.animationsMediaQuery();
+    const scrollOffset = $event.target.children[0].scrollTop;
+    const headerSectionHeight = this.headerSection.nativeElement.offsetHeight; //this._renderer.selectRootElement(this.firstContainer.nativeElement).offsetWidth;
+    this.navigationBackground = scrollOffset > headerSectionHeight - 110;
+
+    if (scrollOffset > 265 && scrollOffset < 1375) {
+      if (!this.animateAboutMe) this.animateAboutMe = true;
+    }
+    if (scrollOffset > 1007 && scrollOffset < 1855) {
+      if (!this.animatePortfolio) this.animatePortfolio = true;
+    }
   }
   ngOnInit() {
     this.navigationBackground = false;
-    setTimeout(() => {
-      this.animationsMediaQuery();
-    }, 500);
   }
-  getScreenSize($event?) {
-    this.adjustCarousel();
-    this.animationsMediaQuery();
-    //console.log(this.scrHeight, this.scrWidth);
+  ngAfterViewInit() {
+    this.onResize();
+  }
+  ngAfterContentChecked() {
+    this.cdr.detectChanges();
   }
   adjustCarousel() {
     let carouselContainer = this.carouselContainer.nativeElement;
@@ -63,33 +80,22 @@ export class HomeComponent implements OnInit {
   }
   animationsMediaQuery() {
     let firstContainerWidth = this.firstContainer.nativeElement.offsetWidth; //this._renderer.selectRootElement(this.firstContainer.nativeElement).offsetWidth;
-    if (firstContainerWidth > 767) {
-      this.mobileDevice = false;
-    } else {
-      this.mobileDevice = true;
-    }
+    this.mobileDevice = firstContainerWidth <= 767;
   }
-  doSomethingOnWindowScroll($event) {
-    let scrollOffset = $event.children[0].scrollTop;
-    if (scrollOffset > 842) {
-      this.navigationBackground = true;
-    } else {
-      this.navigationBackground = false;
+  scrollTo(target: HTMLElement) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  changeHeroImage(width: number) {
+    switch (true) {
+      case width < RESPONSIVE_SM:
+        this.heroImg = 'assets/images/hero_background_small.jpg';
+        break;
+      case width >= RESPONSIVE_SM && width < RESPONSIVE_MD:
+        this.heroImg = 'assets/images/hero_background_medium.jpg';
+        break;
+      default:
+        this.heroImg = 'assets/images/hero_background.jpg';
+        break;
     }
-
-    if (scrollOffset > 265 && scrollOffset < 1375) {
-      if (!this.animateAboutMe) this.animateAboutMe = true;
-    } /*else {
-			if (this.animateAboutMe)
-				this.animateAboutMe = false;
-		}*/
-    if (scrollOffset > 1007 && scrollOffset < 1855) {
-      if (!this.animatePortfolio) this.animatePortfolio = true;
-    } /*else {
-			if (this.animatePortfolio)
-				this.animatePortfolio = false;
-		}*/
-    console.log('window scroll: ', scrollOffset);
-    //this.getScreenSize();
   }
 }

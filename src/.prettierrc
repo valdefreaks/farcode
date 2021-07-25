@@ -20,13 +20,15 @@
       "files": ["*.html"],
       "options": {
         "singleQuote": false,
-        "jsxBracketSameLine": true
+        "jsxBracketSameLine": true,
+        "tabWidth": 2
       }
     },
     {
-      "files": ["*.scss"],
+      "files": ["*.scss", "*.css"],
       "options": {
-        "singleQuote": true
+        "singleQuote": true,
+        "tabWidth": 2
       }
     }
   ]

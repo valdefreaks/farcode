@@ -1,1 +1,13 @@
-<app-footer></app-footer>
+<div class="container">
+  <div [ngClass]="'nav-bg'" class="nav-container padding">
+    <nav>
+      <ul class="flex-navigation">
+        <li>
+          <a (click)="navigate()"><i class="fas fa-chevron-left"></i> Inicio</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <h1 class="section-title">Aviso de privacidad</h1>
+  <app-footer></app-footer>
+</div>

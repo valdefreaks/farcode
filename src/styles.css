@@ -5,26 +5,28 @@
 ***********************************************/
 
 ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-h1, h4 {
-    margin: 0.4rem 0;
-    font-weight: 400;
+h1,
+h4 {
+  margin: 0.4rem 0;
+  font-weight: 400;
 }
 
-input:focus, textarea:focus {
-    outline: none;
+input:focus,
+textarea:focus {
+  outline: none;
 }
 
 /***********************************************
@@ -32,19 +34,19 @@ input:focus, textarea:focus {
 ***********************************************/
 
 :root {
-    /*--primary-dark: #272343;
+  /*--primary-dark: #272343;
     --primary-light: #e3f6f5;
     --primary: #bae8e8;
     --background-color: #ffffff;*/
-    /*--primary-dark: #4d3e3e;
+  /*--primary-dark: #4d3e3e;
     --primary-light: #ffc38b;
     --primary: #ff926b;
     --background-color: #fff3cd;*/
-    /*--primary-dark: #1a1c20;*/
-    /*--primary-light: #ffd5cd;
+  /*--primary-dark: #1a1c20;*/
+  /*--primary-light: #ffd5cd;
     --primary: #f9813a;
     --background-color: #fcf1f1;*/
-    /*
+  /*
     --primary-dark: #222831;
     --primary-light: #ffd369;
     --primary: #f9813a;
@@ -71,7 +73,7 @@ input:focus, textarea:focus {
     --accent: #ffad5a;
     --background-color: #ffffff;
     */
-    /*--primary: #ffad5a;
+  /*--primary: #ffad5a;
     --primary-dark: #283e56;
     --primary-light: #1989ac;
     --accent: #970747;
@@ -82,11 +84,11 @@ input:focus, textarea:focus {
     --accent: #970747;
     --background-color: #eeeeee;
     --primary-light: #4f8a8b;*/
-    --primary-dark: #222831;
-    --primary: #fbd46d;
-    --accent: #970747;
-    --background-color: #eeeeee;
-    --primary-light: #00bcd4;
+  --primary-dark: #222831;
+  --primary: #fbd46d;
+  --accent: #970747;
+  --background-color: #eeeeee;
+  --primary-light: #00bcd4;
 }
 
 /*
@@ -97,41 +99,43 @@ font-family: 'Sarabun', sans-serif;
 font-family: 'Pacifico', cursive;
 */
 
-*, html, body {
-    box-sizing: border-box;
-    font-family: 'Sarabun', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+*,
+html,
+body {
+  box-sizing: border-box;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .padding {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transition: all 0.5s ease-in-out;
 }
 
-@media only screen and (min-width:992px) {
-    .padding {
-        padding-left: 8rem;
-        padding-right: 8rem;
-    }
+@media only screen and (min-width: 992px) {
+  .padding {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
 }
 
 .btn-primary {
-    border-radius: 3px;
-    color: var(--primary-dark);
-    background-color: var(--primary);
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: all 0.4s;
-    font-size: 1rem;
+  border-radius: 3px;
+  color: var(--primary-dark);
+  background-color: var(--primary);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.4s;
+  font-size: 1rem;
 }
 
 .btn-primary:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-
