@@ -21,21 +21,21 @@
           @fadeLeft2
           href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/"
           target="_blank"
-          ><i class="fab fa-linkedin"></i
+        ><i class="fab fa-linkedin"></i
         ></a>
         <a @fadeLeft href="https://github.com/valdefreaks" target="_blank"
-          ><i class="fab fa-github"></i
+        ><i class="fab fa-github"></i
         ></a>
         <a @fadeRight href="https://www.facebook.com/Valdemar.Farina/" target="_blank"
-          ><i class="fab fa-facebook"></i
+        ><i class="fab fa-facebook"></i
         ></a>
         <a @fadeRight2 href="https://api.whatsapp.com/send?phone=527331206065" target="_blank"
-          ><i class="fab fa-whatsapp"></i
+        ><i class="fab fa-whatsapp"></i
         ></a>
       </div>
     </div>
     <div class="hero-opacity"></div>
-    <img class="hero-img" [src]="heroImg" alt="" />
+    <img class="hero-img" [src]="heroImg" alt=""/>
   </section>
   <section #aboutMe id="about-me-section" class="padding">
     <div *ngIf="mobileDevice" class="rectangle">
@@ -52,15 +52,15 @@
           Mi nombre es <span>Valdemar Farina</span>
           y me da gusto que estes aquí.
         </p>
-        <br />
+        <br/>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Te cuento un poco sobre mi: <br />
+          Te cuento un poco sobre mi: <br/>
           Siempre he sido un apasionado de la tecnología, por al motivo, estudié la Ingeniería en
           Tecnologías de la Información. Desde hace 4 años, me he desempeñado de manera
           independiente desarrollando proyectos informáticos que satisfagan las necesidades de mis
           clientes, entregando productos que superen, por mucho, las expectativas de éstos.
         </p>
-        <br />
+        <br/>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
           Basta de tanta lectura, dale un vistazo a algunos de esos proyectos. Tómate tu tiempo, y
           siéntete en confianza de ponerte en contacto conmigo si así lo deseas.
@@ -81,15 +81,15 @@
           Mi nombre es <span>Valdemar Farina</span>
           y me da gusto que estes aquí.
         </p>
-        <br />
+        <br/>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Te cuento un poco sobre mi: <br />
+          Te cuento un poco sobre mi: <br/>
           Siempre he sido un apasionado de la tecnología, por al motivo, estudié la Ingeniería en
           Tecnologías de la Información. Desde hace 4 años, me he desempeñado de manera
           independiente desarrollando proyectos informáticos que satisfagan las necesidades de mis
           clientes, entregando productos que superen, por mucho, las expectativas de éstos.
         </p>
-        <br />
+        <br/>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
           Basta de tanta lectura, dale un vistazo a algunos de esos proyectos. Tómate tu tiempo, y
           siéntete en confianza de ponerte en contacto conmigo si así lo deseas.
@@ -101,8 +101,7 @@
     <div class="section-title-container">
       <h1
         [@showHideTitleSection]="animatePortfolio ? 'mobileShow' : 'mobileHide'"
-        class="section-title"
-      >
+        class="section-title">
         ¡Mi próximo proyecto podría ser el tuyo!
       </h1>
     </div>
@@ -117,94 +116,93 @@
         [width]="carouselWidth"
         [borderRadius]="8"
         [cellWidth]="cellWidth"
-        [transitionDuration]="700"
+        [transitionDuration]="300"
         [objectFit]="'cover'"
-        [margin]="30"
         [cellsToScroll]="1"
       >
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>Sistema de censo poblacional</p>
               <p>Aplicación Web: Angular + Laravel API REST + MySQL</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/census_project.png" alt="" />
+          <img src="./assets/images/census_project.png" alt=""/>
         </div>
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>Sistema de monitoreo Call Center</p>
               <p>Aplicación Web: ASP.NET Core + Sql Server</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/vidanta_project.png" alt="" />
+          <img src="./assets/images/vidanta_project.png" alt=""/>
         </div>
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>Sistema de pedidos online</p>
               <p>Sitio Web: ASP.NET Core + Bootstrap + Sql Server</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/lunadepapel_users_project.png" alt="" />
+          <img src="./assets/images/lunadepapel_users_project.png" alt=""/>
         </div>
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>Sistema de administración de pedidos</p>
               <p>Aplicación Web: ASP.NET Core + Bootstrap + Sql Server</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/lunadepapel_admin_project.png" alt="" />
+          <img src="./assets/images/lunadepapel_admin_project.png" alt=""/>
         </div>
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>App para supervisión remota</p>
               <p>Aplicación movil (Android): Java + Sql Server</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/lunadepapel_supervisor_project.png" alt="" />
+          <img src="./assets/images/lunadepapel_supervisor_project.png" alt=""/>
         </div>
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>Punto de venta multisucursal</p>
               <p>Aplicación Windows forms: C# + Sql Server</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/lunadepapel_project.png" alt="" />
+          <img src="./assets/images/lunadepapel_project.png" alt=""/>
         </div>
         <div class="carousel-cell">
-          <div class="carousel-info-container">
+          <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
               <p>Sistema de Administración de Eventos</p>
               <p>Aplicación Windows forms: C# + Sql Server</p>
             </div>
             <div class="carousel-details">
-              <button class="btn-primary">Detalles</button>
+              <!--<button class="btn-primary">Detalles</button>-->
             </div>
           </div>
-          <img src="./assets/images/banquetes_project.png" alt="" />
+          <img src="./assets/images/banquetes_project.png" alt=""/>
         </div>
       </carousel>
     </div>

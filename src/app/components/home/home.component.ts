@@ -10,8 +10,8 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { animations, fadeRightNav } from '../../animations/animations';
-import { RESPONSIVE_MD, RESPONSIVE_SM } from '../../utils/common-contanst';
+import {animations, fadeRightNav} from '../../animations/animations';
+import {RESPONSIVE_MD, RESPONSIVE_SM} from '../../utils/common-contanst';
 
 @Component({
   selector: 'app-home',
@@ -21,81 +21,87 @@ import { RESPONSIVE_MD, RESPONSIVE_SM } from '../../utils/common-contanst';
   animations: [animations, fadeRightNav],
 })
 export class HomeComponent
-  implements OnInit, AfterContentChecked, AfterViewInit
-{
-  @ViewChild('carouselContainer', { static: false })
+  implements OnInit, AfterContentChecked, AfterViewInit {
+  @ViewChild('carouselContainer', {static: false})
   carouselContainer: ElementRef;
-  @ViewChild('firstContainer', { static: false }) firstContainer: ElementRef;
-  @ViewChild('headerSection', { static: false }) headerSection: ElementRef;
-  navigationBackground: boolean;
+  @ViewChild('firstContainer', {static: false}) firstContainer: ElementRef;
+  @ViewChild('headerSection', {static: false}) headerSection: ElementRef;
+  animateAboutMe: boolean;
+  animatePortfolio: boolean;
   carouselWidth: number;
   carouselHeight: number;
   cellWidth: number;
-  animateAboutMe: boolean;
-  animatePortfolio: boolean;
+  heroImg = 'assets/images/hero_background_small.jpg';
   mobileDevice: boolean;
-  heroImg: string = 'assets/images/hero_background_small.jpg';
+  navigationBackground = false;
 
-  constructor(private _renderer: Renderer2, private cdr: ChangeDetectorRef) {}
+  constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) {
+  }
+
   @HostListener('window:resize')
-  onResize() {
+  onResize(): void {
     this.adjustCarousel();
     this.animationsMediaQuery();
     this.changeHeroImage(window.innerWidth);
   }
+
   @HostListener('window:scroll', ['$event'])
-  doSomethingOnWindowScroll($event) {
+  doSomethingOnWindowScroll($event): void {
     this.animationsMediaQuery();
     const scrollOffset = $event.target.children[0].scrollTop;
-    const headerSectionHeight = this.headerSection.nativeElement.offsetHeight; //this._renderer.selectRootElement(this.firstContainer.nativeElement).offsetWidth;
+    const headerSectionHeight = this.headerSection.nativeElement.offsetHeight;
     this.navigationBackground = scrollOffset > headerSectionHeight - 110;
 
     if (scrollOffset > 265 && scrollOffset < 1375) {
-      if (!this.animateAboutMe) this.animateAboutMe = true;
+      this.animateAboutMe ??= true;
     }
     if (scrollOffset > 1007 && scrollOffset < 1855) {
-      if (!this.animatePortfolio) this.animatePortfolio = true;
+      this.animatePortfolio ??= true;
     }
   }
-  ngOnInit() {
-    this.navigationBackground = false;
+
+  ngOnInit(): void {
   }
-  ngAfterViewInit() {
+
+  ngAfterViewInit(): void {
     this.onResize();
   }
-  ngAfterContentChecked() {
+
+  ngAfterContentChecked(): void {
     this.cdr.detectChanges();
   }
-  adjustCarousel() {
-    let carouselContainer = this.carouselContainer.nativeElement;
+
+  adjustCarousel(): void {
+    const carouselContainer = this.carouselContainer.nativeElement;
     this.carouselWidth = carouselContainer.offsetWidth;
     if (this.carouselWidth < 875) {
       this.carouselHeight = (this.carouselWidth / 16) * 9;
     } else {
       this.carouselHeight = 540;
     }
-
     this.cellWidth = (this.carouselHeight / 9) * 16;
-    console.log(carouselContainer.offsetWidth);
   }
-  animationsMediaQuery() {
-    let firstContainerWidth = this.firstContainer.nativeElement.offsetWidth; //this._renderer.selectRootElement(this.firstContainer.nativeElement).offsetWidth;
+
+  animationsMediaQuery(): void {
+    const firstContainerWidth = this.firstContainer.nativeElement.offsetWidth;
     this.mobileDevice = firstContainerWidth <= 767;
   }
-  scrollTo(target: HTMLElement) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  scrollTo(target: HTMLElement): void {
+    target.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
-  changeHeroImage(width: number) {
-    switch (true) {
-      case width < RESPONSIVE_SM:
-        this.heroImg = 'assets/images/hero_background_small.jpg';
-        break;
-      case width >= RESPONSIVE_SM && width < RESPONSIVE_MD:
-        this.heroImg = 'assets/images/hero_background_medium.jpg';
-        break;
-      default:
-        this.heroImg = 'assets/images/hero_background.jpg';
-        break;
-    }
+
+  changeHeroImage(width: number): void {
+    const heroImages = {
+      small: 'assets/images/hero_background_small.jpg',
+      medium: 'assets/images/hero_background_medium.jpg',
+      large: 'assets/images/hero_background.jpg',
+    };
+    const windowSize = width < RESPONSIVE_SM
+      ? 'small'
+      : width >= RESPONSIVE_SM && width < RESPONSIVE_MD
+      ? 'medium'
+      : 'large';
+    this.heroImg = heroImages[windowSize];
   }
 }

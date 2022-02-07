@@ -1,5 +1,6 @@
 // Routes
 export const ROUTE_TO_NOT_FOUND = '**';
+export const ROUTE_EMPTY = '';
 export const ROUTE_TO_HOME = 'home';
 export const ROUTE_TO_PRIVACY = 'privacy';
 

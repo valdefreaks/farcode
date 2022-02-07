@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { PrivacyComponent } from './components/privacy/privacy.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import {HomeComponent} from './components/home/home.component';
+import {PrivacyComponent} from './components/privacy/privacy.component';
 import {
+  ROUTE_EMPTY,
   ROUTE_TO_HOME,
   ROUTE_TO_NOT_FOUND,
   ROUTE_TO_PRIVACY,
 } from './utils/common-contanst';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: ROUTE_TO_HOME, pathMatch: 'full' },
-  { path: ROUTE_TO_HOME, component: HomeComponent },
-  { path: ROUTE_TO_PRIVACY, component: PrivacyComponent },
-  { path: ROUTE_TO_NOT_FOUND, redirectTo: ROUTE_TO_HOME },
+  {path: ROUTE_EMPTY, redirectTo: ROUTE_TO_HOME, pathMatch: 'full'},
+  {path: ROUTE_TO_HOME, component: HomeComponent},
+  {path: ROUTE_TO_PRIVACY, component: PrivacyComponent},
+  {path: ROUTE_TO_NOT_FOUND, redirectTo: ROUTE_TO_HOME},
 ];
 
 @NgModule({
@@ -25,4 +26,5 @@ const appRoutes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

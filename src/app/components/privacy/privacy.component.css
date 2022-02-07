@@ -3,21 +3,22 @@
 ***********************************************/
 
 .container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
+
 .nav-container {
-  position: sticky;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10001;
-  transition: all 0.2s;
-  height: 55px;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: 55px;
+  left: 0;
+  position: sticky;
+  top: 0;
+  transition: all 0.2s;
+  width: 100%;
+  z-index: 10001;
 }
 
 .nav-bg {
@@ -25,22 +26,22 @@
 }
 
 .flex-navigation {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   transition: 0.5s all ease-in-out;
 }
 
 .flex-navigation li {
+  color: var(--background-color);
   cursor: pointer;
-  padding: 0.4rem 0.8rem;
+  font-family: 'Overlock SC', cursive;
   font-size: 1rem;
   margin-right: 1rem;
-  color: var(--background-color);
-  transition: all 400ms;
+  padding: 0.4rem 0.8rem;
   text-align: center;
-  font-family: 'Overlock SC', cursive;
+  transition: all 400ms;
 }
 
 .flex-navigation li a {
@@ -61,13 +62,13 @@
 
 .section-title {
   border-bottom: 2px solid var(--primary);
-  text-align: center;
-  font-family: 'Pacifico', cursive;
   color: var(--primary-dark);
+  font-family: 'Pacifico', cursive;
   font-size: 2rem;
-  transition: 0.5s all ease-in-out;
-  padding: 1.5rem;
   margin-bottom: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: 0.5s all ease-in-out;
 }
 
 app-footer {
