@@ -5,8 +5,20 @@
     class="nav-container padding">
     <nav>
       <ul class="flex-navigation">
-        <li><a (click)="scrollTo(aboutMe)">Acerca de mi</a></li>
-        <li><a (click)="scrollTo(portfolio)">Mi portafolio</a></li>
+        <li><a (click)="scrollTo(aboutMe)">{{ 'aboutMe' | translate }}</a></li>
+        <li><a (click)="scrollTo(portfolio)">{{ 'myPortfolio' | translate }}</a></li>
+        <div #target (click)="popIsOpen = !popIsOpen">
+          <i class="fas fa-chevron-down icon"></i>
+          <img [src]="selectedLangOption.imageUrl" [alt]="selectedLangOption.prefix">
+          <p>{{ selectedLangOption.label }}</p>
+        </div>
+        <ngx-custom-tooltip class="tooltip" *ngIf="popIsOpen" [padding]="'8px 0 2px 0'" [target]="target"
+                            [popUpPosition]="'bottomCenter'">
+          <div *ngFor="let lang of langOptions" (click)="selectLanguage(lang.id)">
+            <img [src]="lang.imageUrl" [alt]="lang.prefix">
+            <p>{{ lang.label }}</p>
+          </div>
+        </ngx-custom-tooltip>
         <!--<li><a (click)="scrollTo(contact)">Contacto</a></li>-->
       </ul>
     </nav>
@@ -46,61 +58,28 @@
     <img class="hero-img" [src]="heroImg" alt=""/>
   </section>
   <section #aboutMe id="about-me-section" class="padding">
-    <div *ngIf="mobileDevice" class="rectangle">
+    <div class="rectangle">
       <div class="section-title-container">
         <h1
           [@showHideTitleSection]="animateAboutMe ? 'mobileShow' : 'mobileHide'"
           class="section-title"
         >
-          ¡Hola nuevo amigo!
+          {{ 'hiNewFriend' | translate }}
         </h1>
       </div>
       <div>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Mi nombre es <strong>Valdemar Farina</strong>
-          y me da gusto que estes aquí.
+          {{ 'myNameIs' | translate }} <strong>Valdemar Farina</strong>
+          {{ 'iAmGlad' | translate }}
         </p>
         <br/>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Te cuento un poco sobre mi: <br/>
-          Siempre he sido un apasionado de la tecnología, por al motivo, estudié la Ingeniería en
-          Tecnologías de la Información. Desde hace 4 años, me he desempeñado de manera
-          independiente desarrollando proyectos informáticos que satisfagan las necesidades de mis
-          clientes, entregando productos que superen, por mucho, las expectativas de éstos.
+          {{ 'littleAboutMe' | translate }} <br/>
+          {{ 'alwaysBeen' | translate }}
         </p>
         <br/>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Basta de tanta lectura, dale un vistazo a algunos de esos proyectos. Tómate tu tiempo, y
-          siéntete en confianza de ponerte en contacto conmigo si así lo deseas.
-        </p>
-      </div>
-    </div>
-    <div *ngIf="!mobileDevice" class="rectangle">
-      <div class="section-title-container">
-        <h1
-          [@showHideTitleSection]="animateAboutMe ? 'mobileShow' : 'mobileHide'"
-          class="section-title"
-        >
-          ¡Hola nuevo amigo!
-        </h1>
-      </div>
-      <div>
-        <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Mi nombre es <strong>Valdemar Farina</strong>
-          y me da gusto que estes aquí.
-        </p>
-        <br/>
-        <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Te cuento un poco sobre mi: <br/>
-          Siempre he sido un apasionado de la tecnología, por al motivo, estudié la Ingeniería en
-          Tecnologías de la Información. Desde hace 4 años, me he desempeñado de manera
-          independiente desarrollando proyectos informáticos que satisfagan las necesidades de mis
-          clientes, entregando productos que superen, por mucho, las expectativas de éstos.
-        </p>
-        <br/>
-        <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Basta de tanta lectura, dale un vistazo a algunos de esos proyectos. Tómate tu tiempo, y
-          siéntete en confianza de ponerte en contacto conmigo si así lo deseas.
+          {{ 'enoughReading' | translate }}
         </p>
       </div>
     </div>
@@ -110,7 +89,7 @@
       <h1
         [@showHideTitleSection]="animatePortfolio ? 'mobileShow' : 'mobileHide'"
         class="section-title">
-        ¡Mi próximo proyecto podría ser el tuyo!
+        {{ 'myNextProject' | translate }}
       </h1>
     </div>
     <div
@@ -131,8 +110,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>Sistema de censo poblacional</p>
-              <p>Aplicación Web: Angular + Laravel API REST + MySQL</p>
+              <p>{{ 'projects.census.title' | translate }}</p>
+              <p>{{ 'projects.census.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->
@@ -143,8 +122,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>Sistema de monitoreo Call Center</p>
-              <p>Aplicación Web: ASP.NET Core + Sql Server</p>
+              <p>{{ 'projects.callCenter.title' | translate }}</p>
+              <p>{{ 'projects.callCenter.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->
@@ -155,8 +134,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>Sistema de pedidos online</p>
-              <p>Sitio Web: ASP.NET Core + Bootstrap + Sql Server</p>
+              <p>{{ 'projects.onlineOrders.title' | translate }}</p>
+              <p>{{ 'projects.onlineOrders.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->
@@ -167,8 +146,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>Sistema de administración de pedidos</p>
-              <p>Aplicación Web: ASP.NET Core + Bootstrap + Sql Server</p>
+              <p>{{ 'projects.onlineOrdersAdmin.title' | translate }}</p>
+              <p>{{ 'projects.onlineOrdersAdmin.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->
@@ -179,8 +158,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>App para supervisión remota</p>
-              <p>Aplicación movil (Android): Java + Sql Server</p>
+              <p>{{ 'projects.remoteAdminApp.title' | translate }}</p>
+              <p>{{ 'projects.remoteAdminApp.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->
@@ -191,8 +170,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>Punto de venta multisucursal</p>
-              <p>Aplicación Windows forms: C# + Sql Server</p>
+              <p>{{ 'projects.pointOfSale.title' | translate }}</p>
+              <p>{{ 'projects.pointOfSale.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->
@@ -203,8 +182,8 @@
         <div class="carousel-cell">
           <div class="carousel-info-container" [style.width]="cellWidth - 90 + 'px'">
             <div class="carousel-info">
-              <p>Sistema de Administración de Eventos</p>
-              <p>Aplicación Windows forms: C# + Sql Server</p>
+              <p>{{ 'projects.eventManagement.title' | translate }}</p>
+              <p>{{ 'projects.eventManagement.description' | translate }}</p>
             </div>
             <div class="carousel-details">
               <!--<button class="btn-primary">Detalles</button>-->

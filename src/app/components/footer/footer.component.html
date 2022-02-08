@@ -1,15 +1,15 @@
 <section id="footer-section" class="padding">
   <div class="footer-content">
-    <h5>Contacto</h5>
+    <h5>{{ 'contact' | translate }}</h5>
     <a href="https://api.whatsapp.com/send?phone=527331206065"
        target="_blank">
-      <i class="footer-icon fab fa-whatsapp"></i>Envíanos un mensaje
+      <i class="footer-icon fab fa-whatsapp"></i>{{ 'sendMessage' | translate }}
     </a>
   </div>
   <div class="footer-content">
-    <h5>También puedes ver</h5>
+    <h5>{{ 'alsoSee' | translate }}</h5>
     <a (click)="navigate()">
-      <i class="footer-icon fas fa-lock"></i>Aviso de privacidad
+      <i class="footer-icon fas fa-lock"></i>{{ 'privacyNotice' | translate }}
     </a>
   </div>
   <div class="footer-content copyright">

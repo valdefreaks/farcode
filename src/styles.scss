@@ -32,6 +32,21 @@ textarea:focus {
   outline: none;
 }
 
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px styles.$gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: styles.$primary;
+  border-radius: 20px;
+}
+
 /***********************************************
 *********++**** GENERALS STYLES ******+*********
 ***********************************************/

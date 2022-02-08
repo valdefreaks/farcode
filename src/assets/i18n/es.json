@@ -1,0 +1,46 @@
+{
+  "home": "Inicio",
+  "aboutMe": "Acerca de mí",
+  "myPortfolio": "Mi portafolio",
+  "hiNewFriend": "¡Hola nuevo amigo!",
+  "myNameIs": "Mi nombre es",
+  "iAmGlad": "y me da gusto que estes aquí.",
+  "littleAboutMe": "Te cuento un poco sobre mi:",
+  "alwaysBeen": "Siempre he sido un apasionado de la tecnología, por al motivo, estudié la Ingeniería en Tecnologías de la Información. Desde hace 4 años, me he desempeñado de manera independiente desarrollando proyectos informáticos que satisfagan las necesidades de mis clientes, entregando productos que superen, por mucho, las expectativas de éstos.",
+  "enoughReading": "Basta de tanta lectura, dale un vistazo a algunos de esos proyectos. Tómate tu tiempo, y siéntete en confianza de ponerte en contacto conmigo si así lo deseas.",
+  "myNextProject": "¡Mi próximo proyecto podría ser el tuyo!",
+  "projects": {
+    "census": {
+      "title": "Sistema de censo poblacional",
+      "description": "Aplicación Web: Angular + Laravel API REST + MySQL"
+    },
+    "callCenter": {
+      "title": "Sistema de monitoreo Call Center",
+      "description": "Aplicación Web: ASP.NET Core + Sql Server"
+    },
+    "onlineOrders": {
+      "title": "Sistema de pedidos online",
+      "description": "Aplicación Web: ASP.NET Core + Bootstrap + Sql Server"
+    },
+    "onlineOrdersAdmin": {
+      "title": "Sistema de administración de pedidos",
+      "description": "Aplicación Web: ASP.NET Core + Bootstrap + Sql Server"
+    },
+    "remoteAdminApp": {
+      "title": "App para supervisión remota",
+      "description": "Aplicación movil (Android): Java + Sql Server"
+    },
+    "pointOfSale": {
+      "title": "Punto de venta multisucursal",
+      "description": "Aplicación Windows forms: C# + Sql Server"
+    },
+    "eventManagement": {
+      "title": "Sistema de Administración de Eventos",
+      "description": "Aplicación Windows forms: C# + Sql Server"
+    }
+  },
+  "contact": "Contacto",
+  "sendMessage": "Envíame un mensaje",
+  "alsoSee": "También puedes ver",
+  "privacyNotice": "Aviso de privacidad"
+}

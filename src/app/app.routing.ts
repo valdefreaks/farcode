@@ -19,10 +19,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(appRoutes, {
-      useHash: false,
-      preloadingStrategy: PreloadAllModules,
-    }),
+    RouterModule.forRoot(appRoutes),
   ],
   exports: [RouterModule],
 })

@@ -1,0 +1,46 @@
+{
+  "home": "Home",
+  "aboutMe": "About me",
+  "myPortfolio": "My portfolio",
+  "hiNewFriend": "Hi new friend!",
+  "myNameIs": "My name is",
+  "iAmGlad": "and I'm glad you're here.",
+  "littleAboutMe": "I tell you a little about me:",
+  "alwaysBeen": "I have always been passionate about technology, for that reason, I studied Engineering in Information Technology. For 4 years, I have worked independently developing computer projects that meet the needs of my clients, delivering products that far exceed their expectations.",
+  "enoughReading": "Enough of so much reading, take a look at some of those projects. Take your time, and feel free to contact me if you wish.",
+  "myNextProject": "My next project could be yours!",
+  "projects": {
+    "census": {
+      "title": "Population census system",
+      "description": "Web Application: Angular + Laravel API REST + MySQL"
+    },
+    "callCenter": {
+      "title": "Call Center monitoring system",
+      "description": "Web Application: ASP.NET Core + Sql Server"
+    },
+    "onlineOrders": {
+      "title": "Online ordering system",
+      "description": "Web Application: ASP.NET Core + Bootstrap + Sql Server"
+    },
+    "onlineOrdersAdmin": {
+      "title": "Order management system",
+      "description": "Web Application: ASP.NET Core + Bootstrap + Sql Server"
+    },
+    "remoteAdminApp": {
+      "title": "App for remote supervision",
+      "description": "Mobile application (Android): Java + Sql Server"
+    },
+    "pointOfSale": {
+      "title": "Multi-branch point of sale",
+      "description": "Windows Forms Application: C# + Sql Server"
+    },
+    "eventManagement": {
+      "title": "Event Management System",
+      "description": "Windows Forms Application: C# + Sql Server"
+    }
+  },
+  "contact": "Contact",
+  "sendMessage": "Send me a message",
+  "alsoSee": "You can also see",
+  "privacyNotice": "Privacy Notice"
+}

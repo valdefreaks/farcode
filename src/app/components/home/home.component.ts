@@ -11,7 +11,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import {animations, fadeRightNav} from '../../animations/animations';
-import {RESPONSIVE_MD, RESPONSIVE_SM} from '../../utils/common-contanst';
+import {LANGUAGE_OPTIONS, RESPONSIVE_MD, RESPONSIVE_SM} from '../../utils/common-contanst';
+import {TranslateService} from '@ngx-translate/core';
+import {LanguageOption} from '../../models/lang-option';
 
 @Component({
   selector: 'app-home',
@@ -32,22 +34,30 @@ export class HomeComponent
   carouselHeight: number;
   cellWidth: number;
   heroImg = 'assets/images/hero_background_small.jpg';
-  mobileDevice: boolean;
   navigationBackground = false;
+  langOptions: Array<LanguageOption> = LANGUAGE_OPTIONS;
+  selectedLangOption: LanguageOption = null;
+  popIsOpen = false;
 
-  constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) {
+  constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef, private translate: TranslateService) {
+    const localLang = localStorage.getItem('lang');
+    const langOption = this.langOptions.filter((item) => item.prefix === localLang);
+    if (langOption.length > 0) {
+      this.selectedLangOption = langOption[0];
+    } else {
+      this.selectedLangOption = LANGUAGE_OPTIONS[0];
+      localStorage.setItem('lang', this.selectedLangOption.prefix);
+    }
   }
 
   @HostListener('window:resize')
   onResize(): void {
     this.adjustCarousel();
-    this.animationsMediaQuery();
     this.changeHeroImage(window.innerWidth);
   }
 
   @HostListener('window:scroll', ['$event'])
   doSomethingOnWindowScroll($event): void {
-    this.animationsMediaQuery();
     const scrollOffset = $event.target.children[0].scrollTop;
     const headerSectionHeight = this.headerSection.nativeElement.offsetHeight;
     this.navigationBackground = scrollOffset > headerSectionHeight - 110;
@@ -82,11 +92,6 @@ export class HomeComponent
     this.cellWidth = (this.carouselHeight / 9) * 16;
   }
 
-  animationsMediaQuery(): void {
-    const firstContainerWidth = this.firstContainer.nativeElement.offsetWidth;
-    this.mobileDevice = firstContainerWidth <= 767;
-  }
-
   scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: 'smooth', block: 'start'});
   }
@@ -100,8 +105,23 @@ export class HomeComponent
     const windowSize = width < RESPONSIVE_SM
       ? 'small'
       : width >= RESPONSIVE_SM && width < RESPONSIVE_MD
-      ? 'medium'
-      : 'large';
+        ? 'medium'
+        : 'large';
     this.heroImg = heroImages[windowSize];
+  }
+
+  selectLanguage(langId: number): void {
+    const langOption = this.langOptions.filter((item) => item.id === langId);
+    let lang;
+    if (langOption.length > 0) {
+      this.selectedLangOption = langOption[0];
+      lang = langOption[0].prefix;
+    } else {
+      this.selectedLangOption = LANGUAGE_OPTIONS[0];
+      lang = 'es';
+    }
+    localStorage.setItem('lang', lang);
+    this.popIsOpen = false;
+    this.translate.use(lang.match(/es|en/) ? lang : 'es');
   }
 }
