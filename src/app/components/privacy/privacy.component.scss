@@ -1,0 +1,97 @@
+@use "index" as styles;
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  /***************** NAVIGATION ****************/
+  & > .nav-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    left: 0;
+    position: sticky;
+    top: 0;
+    transition: all 0.2s;
+    width: 100%;
+    z-index: 10001;
+
+    &.nav-bg {
+      background-color: styles.$primary-dark;
+    }
+
+    & > nav {
+      & > .flex-navigation {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        transition: 0.5s all ease-in-out;
+
+        & > li {
+          color: styles.$background-color;
+          cursor: pointer;
+          font-family: styles.$font-family-overlock;
+          font-size: 1rem;
+          margin-right: 1rem;
+          padding: 0.4rem 0.8rem;
+          text-align: center;
+          transition: all 400ms;
+
+          &:hover {
+            color: styles.$primary;
+
+            & > a {
+              color: styles.$primary;
+
+              & > .icon {
+                color: styles.$primary;
+              }
+            }
+          }
+
+          & > a {
+            color: styles.$background-color;
+            transition: all 400ms;
+
+            & > .icon {
+              color: styles.$background-color;
+              cursor: pointer;
+              margin-right: 10px;
+              transition: all 400ms;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & > .section-title {
+    border-bottom: 2px solid styles.$primary;
+    color: styles.$primary-dark;
+    font-family: styles.$font-family-pacifico;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: 0.5s all ease-in-out;
+  }
+
+  & > app-footer {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 480px) {
+    .section-title-container h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .flex-navigation {
+      justify-content: flex-start;
+    }
+  }
+}

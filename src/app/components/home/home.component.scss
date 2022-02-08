@@ -1,0 +1,442 @@
+@use "index" as styles;
+
+.first-container {
+  background-color: styles.$background-color;
+
+  & > .nav-container {
+    flex-grow: 0;
+    flex-shrink: 0;
+    left: 0;
+    padding-bottom: 0.5rem;
+    position: sticky;
+    opacity: 0.95;
+    top: 0;
+    transition: all 0.2s;
+    width: 100%;
+    z-index: 10001;
+
+    &.nav-bg {
+      background-color: styles.$primary-dark;
+    }
+
+    &.nav-no-bg {
+      background-color: styles.$primary-dark;
+    }
+
+    & > nav {
+      padding-top: 1rem;
+
+      & > .flex-navigation {
+        @include styles.flex-row-no-wrap();
+        @include styles.center-items();
+
+        & > li {
+          color: styles.$background-color;
+          cursor: pointer;
+          font-family: styles.$font-family-overlock;
+          font-size: 1rem;
+          margin-right: 1rem;
+          padding: 0.4rem 0.8rem;
+          text-align: center;
+          transition: all 400ms;
+
+          &:hover {
+            color: styles.$primary;
+
+            & > a {
+              color: styles.$primary;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          & > a {
+            color: styles.$background-color;
+            transition: all 400ms;
+          }
+        }
+      }
+    }
+  }
+
+  & > #header-section {
+    @include styles.flex-column();
+    height: calc(100vh + 20px);
+    margin-top: -75px;
+    position: relative;
+
+    & > .name-container {
+      @include styles.flex-column();
+      align-items: center;
+      flex-grow: 1;
+      justify-content: center;
+      z-index: 2;
+
+      & > h1 {
+        color: styles.$primary;
+        font-family: styles.$font-family-pacifico;
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        transition: 0.5s all ease-in-out;
+        word-spacing: 0.5rem;
+      }
+
+      & > h4 {
+        color: styles.$background-color;
+        font-family: styles.$font-family-overlock;
+        font-size: 1.7rem;
+        text-align: center;
+      }
+
+      & > .social-media-container {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+
+        & > a {
+          color: styles.$background-color;
+          font-size: 1.2rem;
+          margin: 0 0.5rem;
+        }
+      }
+    }
+
+    & > .hero-opacity {
+      background-color: styles.$primary-dark;
+      height: 100%;
+      left: 0;
+      opacity: 0.88;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    & > .hero-img {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+
+  & > #about-me-section {
+    @include styles.flex-row-wrap();
+    background-color: styles.$background-color;
+    justify-content: center;
+    padding-bottom: 7rem;
+    padding-top: 4rem;
+
+    & > .rectangle {
+      @include styles.flex-column();
+      align-items: center;
+      margin: 1rem 0;
+      max-width: 1000px;
+
+      & > div:first-child {
+        border-bottom: 2px solid styles.$primary;
+        border-right: none;
+        flex-basis: 30%;
+        padding: 1.5rem;
+      }
+
+      & > div:last-child {
+        flex-basis: 70%;
+        padding: 1.5rem;
+      }
+
+      & > div {
+        & > .section-title {
+          color: styles.$primary-dark;
+          font-family: styles.$font-family-pacifico;
+          font-size: 2.5rem;
+          margin: 0;
+          text-align: center;
+
+          &::before {
+            color: styles.$primary;
+            height: 2px;
+            left: 0;
+            position: absolute;
+            top: 0;
+          }
+        }
+
+        & > p {
+          font-size: 1.1rem;
+          line-height: 1.5;
+          margin: 0;
+          text-align: justify;
+
+          & > strong {
+            font-size: 1.1rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  & > #portfolio-section {
+    @include styles.flex-column();
+    align-items: center;
+    color: styles.$background-color;
+    padding: 4rem 0 8rem 0;
+    position: relative;
+
+    & > div {
+      flex-basis: 100%;
+      flex-grow: 1;
+    }
+
+    & > .section-title-container {
+      border-bottom: 2px solid styles.$primary;
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+
+      & > h1 {
+        color: styles.$primary-dark;
+        font-family: styles.$font-family-pacifico;
+        font-size: 2.5rem;
+        margin: 0;
+        text-align: center;
+      }
+    }
+
+    & > .flex-portfolio-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 1.5rem 0;
+      width: 100%;
+
+      & > .carousel {
+        flex-basis: 100%;
+
+        & .carousel-cell {
+          border-radius: 10px;
+          padding: 0 45px;
+
+          & > .carousel-info-container {
+            @include styles.flex-row-wrap();
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px 20px 10px 10px;
+            bottom: 0;
+            justify-content: space-between;
+            left: 45px;
+            padding: 0.8rem;
+            position: absolute;
+            z-index: 2;
+
+            & > .carousel-info {
+              padding-right: 10px;
+
+              & > p:first-child {
+                font-size: 1rem;
+                margin: 0 0 8px 0;
+              }
+
+              & > p:last-child {
+                color: styles.$primary;
+                font-size: 0.8rem;
+                margin: 0;
+              }
+            }
+
+            & > .carousel-details {
+              & > button {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 320px) {
+    & > #header-section {
+      & > .name-container {
+        & > h1 {
+          font-size: 3.5rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    & > .nav-container {
+      &.nav-bg {
+        background-color: styles.$primary-dark;
+      }
+
+      &.nav-no-bg {
+        background-color: transparent;
+      }
+
+      & > nav {
+        & > .flex-navigation {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    & > #header-section {
+      & > .name-container {
+        & > h1 {
+          font-size: 4.3rem;
+        }
+      }
+    }
+
+    & > #about-me-section {
+      & > .rectangle {
+        flex-direction: row;
+
+        & > div:first-child {
+          border-bottom: none;
+          border-right: 2px solid styles.$primary;
+          flex-basis: 30%;
+          padding: 2.5rem;
+        }
+
+        & > div:last-child {
+          flex-basis: 70%;
+          padding: 2.5rem;
+        }
+
+        & > div {
+          & > .section-title {
+            text-align: end;
+          }
+
+          & > p {
+            font-size: 1.3rem;
+            text-align: start;
+
+            & > strong {
+              font-size: 1.3rem;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    & > #portfolio-section{
+      & > .flex-portfolio-container{
+        & > .carousel{
+          & .carousel-cell{
+            & > .carousel-info-container{
+              align-items: start;
+              padding: 1.5rem;
+
+              & > .carousel-info{
+                & > p:first-child {
+                  font-size: 1.5rem;
+                }
+
+                & > p:last-child {
+                  font-size: 1.3rem;
+                }
+              }
+
+              & > .carousel-details{
+                & > button {
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+#contact-section {
+  margin-top: 3.5rem;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-section > div:first-child {
+  border-bottom: 2px solid styles.$primary;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+#contact-section > div:last-child {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.form-container {
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--background-color) !important;
+  max-width: 700px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(40, 62, 86, 0.5);
+  background-color: var(--primary-dark);
+}
+
+@media only screen and (min-width: 768px) {
+  .form-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.form-container > div:first-child {
+  padding: 2rem;
+  text-align: center;
+  flex-basis: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.form-container > div:last-child {
+  padding: 2rem;
+  flex-basis: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.form-container div img {
+  margin-top: 1.5rem;
+  width: 80%;
+}
+
+.contact-form label,
+.contact-form input {
+  display: block;
+}
+
+.contact-form input[type='text'],
+textarea {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.3rem 0 1rem 0;
+  background-color: var(--background-color);
+}
+
+.contact-form input[type='submit'] {
+  margin-left: auto;
+}
+*/

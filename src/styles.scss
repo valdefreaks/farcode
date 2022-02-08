@@ -1,0 +1,68 @@
+@use "index" as styles;
+@use "normalize";
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel+Decorative:wght@400;700;900&family=Overlock+SC&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/***********************************************
+************* PERSONAL NORMALIZE ***************
+***********************************************/
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h4 {
+  margin: 0.4rem 0;
+  font-weight: 400;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/***********************************************
+*********++**** GENERALS STYLES ******+*********
+***********************************************/
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  font-family: styles.$font-family-sarabun;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.padding {
+  @include styles.padding();
+}
+
+@media only screen and (min-width: 992px) {
+  .padding {
+    @include styles.padding($left: 8rem, $right: 8rem);
+  }
+}
+
+.btn-primary {
+  @include styles.btn-primary();
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

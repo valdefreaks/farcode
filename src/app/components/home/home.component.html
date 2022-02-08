@@ -2,8 +2,7 @@
   <div
     @fadeRightNav
     [ngClass]="navigationBackground ? 'nav-bg' : 'nav-no-bg'"
-    class="nav-container padding"
-  >
+    class="nav-container padding">
     <nav>
       <ul class="flex-navigation">
         <li><a (click)="scrollTo(aboutMe)">Acerca de mi</a></li>
@@ -20,18 +19,27 @@
         <a
           @fadeLeft2
           href="https://www.linkedin.com/in/valdemar-farina-s%C3%A1nchez-6651b3201/"
-          target="_blank"
-        ><i class="fab fa-linkedin"></i
-        ></a>
-        <a @fadeLeft href="https://github.com/valdefreaks" target="_blank"
-        ><i class="fab fa-github"></i
-        ></a>
-        <a @fadeRight href="https://www.facebook.com/Valdemar.Farina/" target="_blank"
-        ><i class="fab fa-facebook"></i
-        ></a>
-        <a @fadeRight2 href="https://api.whatsapp.com/send?phone=527331206065" target="_blank"
-        ><i class="fab fa-whatsapp"></i
-        ></a>
+          target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          @fadeLeft
+          href="https://github.com/valdefreaks"
+          target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          @fadeRight
+          href="https://www.facebook.com/Valdemar.Farina/"
+          target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a
+          @fadeRight2
+          href="https://api.whatsapp.com/send?phone=527331206065"
+          target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
     </div>
     <div class="hero-opacity"></div>
@@ -49,7 +57,7 @@
       </div>
       <div>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Mi nombre es <span>Valdemar Farina</span>
+          Mi nombre es <strong>Valdemar Farina</strong>
           y me da gusto que estes aquí.
         </p>
         <br/>
@@ -78,7 +86,7 @@
       </div>
       <div>
         <p [@fade]="animateAboutMe ? 'show' : 'hide'">
-          Mi nombre es <span>Valdemar Farina</span>
+          Mi nombre es <strong>Valdemar Farina</strong>
           y me da gusto que estes aquí.
         </p>
         <br/>
